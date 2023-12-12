@@ -1,9 +1,9 @@
-<robot name="alvar_tile" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="icuas24" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <link name="alvar_tile">
+  <link name="icuas24">
     <visual>
     <geometry>
-      <mesh filename="$(find icuas23_competition)/models/icuas24/icuas24_wrld_notxt.dae" scale="1 1 1" />
+      <mesh filename="$(find icuas24_competition)/models/icuas24/icuas24_wrld_notxt.dae" scale="1 1 1" />
     </geometry>
     </visual>
     <inertial>
@@ -15,7 +15,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(find icuas23_competition)/models/icuas24/icuas24_wrld_notxt.dae" scale="1 1 1" />
+        <mesh filename="$(find icuas24_competition)/models/icuas24/icuas24_wrld_notxt.dae" scale="1 1 1" />
       </geometry>
     </collision>
   </link>

@@ -3,7 +3,7 @@
   <link name="eggplant_2">
     <visual>
     <geometry>
-      <mesh filename="$(find icuas23_competition)/models/eggplant_2/eggplant_2.dae" scale="1 1 1" />
+      <mesh filename="$(find icuas24_competition)/models/eggplant_2/eggplant_2.dae" scale="1 1 1" />
     </geometry>
     </visual>
     <inertial>
@@ -15,7 +15,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(find icuas23_competition)/models/eggplant_2/eggplant_2.dae" scale="1 1 1" />
+        <mesh filename="$(find icuas24_competition)/models/eggplant_2/eggplant_2.dae" scale="1 1 1" />
       </geometry>
     </collision>
   </link>
