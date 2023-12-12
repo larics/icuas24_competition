@@ -1,0 +1,89 @@
+name: icuas_ch
+root: ./
+startup_window: roscore
+pre_window: |
+  export UAV_NAMESPACE=red;
+windows:
+  - roscore:
+      layout:
+      panes:
+        - roscore
+        - export SITL_RITW_TERMINAL="tmux new-window -d -n:ardupilot1"; waitForRos; 
+          roslaunch ardupilot_gazebo sim_vehicle.launch 
+          enable_console:=false
+          additional_arguments:="--no-rebuild"
+          parm_file:=$(rospack find icuas24_competition)/parameters/arducopter_nogps.params
+        - waitForRos; rosparam set use_sim_time true; roslaunch ardupilot_gazebo mavros.launch
+  - gazebo:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch ardupilot_gazebo kopterworx.launch 
+          use_sim_time:=true
+          x:=1.5 y:=1.5
+          world:=$(rospack find icuas24_competition)/worlds/well_lit.world
+        - waitForRos; waitForSimulation; roslaunch icuas24_competition spawn_greenhouse_world.launch
+        - |
+          waitForRos
+          waitForSimulation
+          sleep 2
+          roslaunch icuas24_competition spawn_plant.launch name:=plant1 model_name:=plant x:=4.0 y:=6.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant2 model_name:=plant x:=4.0 y:=4.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant3 model_name:=tomato_3 x:=4.0 y:=13.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant4 model_name:=tomato_3 x:=4.0 y:=15.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant5 model_name:=plant x:=10.0 y:=21.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant6 model_name:=plant x:=10.0 y:=22.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant7 model_name:=plant x:=10.0 y:=19.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant8 model_name:=tomato_1 x:=10.0 y:=22.5 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant9 model_name:=tomato_2 x:=10.0 y:=19.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant10 model_name:=tomato_1 x:=16.0 y:=13.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant11 model_name:=plant x:=16.0 y:=12.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant12 model_name:=plant x:=16.0 y:=15.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant13 model_name:=plant x:=16.0 y:=21.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant14 model_name:=tomato_2 x:=16.0 y:=19.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant15 model_name:=plant x:=16.0 y:=19.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant16 model_name:=tomato_3 x:=16.0 y:=22.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant17 model_name:=pepper_4 x:=10.0 y:=7.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant18 model_name:=pepper_2 x:=10.0 y:=4.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant19 model_name:=pepper_3 x:=10.0 y:=15.0 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant20 model_name:=pepper_2 x:=10.0 y:=12.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant21 model_name:=pepper_4 x:=10.0 y:=13.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant22 model_name:=pepper_2 x:=16.0 y:=4.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant23 model_name:=pepper_2 x:=16.0 y:=6.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant24 model_name:=pepper_1 x:=16.0 y:=15.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant25 model_name:=pepper_3 x:=16.0 y:=12.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant26 model_name:=pepper_1 x:=16.0 y:=13.5 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant27 model_name:=pepper_3 x:=16.0 y:=15.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant28 model_name:=eggplant_3 x:=4.0 y:=12.0 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant29 model_name:=eggplant_2 x:=4.0 y:=19.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant30 model_name:=eggplant_4 x:=4.0 y:=22.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant31 model_name:=eggplant_4 x:=4.0 y:=21.0 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant32 model_name:=eggplant_1 x:=10.0 y:=6.0 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant33 model_name:=eggplant_1 x:=10.0 y:=13.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant34 model_name:=eggplant_2 x:=10.0 y:=15.0 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant35 model_name:=eggplant_1 x:=10.0 y:=12.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant36 model_name:=eggplant_1 x:=10.0 y:=19.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant37 model_name:=eggplant_2 x:=10.0 y:=22.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant38 model_name:=plant x:=10.0 y:=21.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant39 model_name:=plant x:=16.0 y:=6.0 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant40 model_name:=eggplant_3 x:=16.0 y:=4.5 z:=3.9 yaw:=-1.5707
+          rostopic pub --latch /$UAV_NAMESPACE/plants_beds std_msgs/String "Pepper 10 11 14 21 23 24"
+  - arm&takeof:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch uav_ros_control pid_carrot.launch 
+          manual_takeoff:=false
+          msf_callback_enable:=true
+          odometry:=odometry
+          control_type:=pid_cascade_node_yawrate
+          default_params:=custom_config/position_control_thrust.yaml
+        - |
+          waitForRos
+          waitForSysStatus
+          rosrun ardupilot_gazebo automatic_takeoff.sh 2 /$UAV_NAMESPACE/odometry
+          sleep 5
+          rostopic pub --latch /$UAV_NAMESPACE/challenge_started std_msgs/Bool True
+  - trajectory:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch uav_ros_tracker topp_tracker.launch 
+          tracker_config:=custom_config/topp_config_custom.yaml

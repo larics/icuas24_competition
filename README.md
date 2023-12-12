@@ -168,5 +168,5 @@ Remember that you should run your code alongside the existing setup through the 
 
 Make sure to wait for data on both topics to safely run your code.
 
-### Changing the tile locations for testing
-You can change tile locations through session file or spawn them from a separate terminal. Use position args to change the location of the tile. 
+### Changing the plant locations for testing
+You can change plant locations through session file or spawn them from a separate terminal. Use position args to change the location of the plant. 

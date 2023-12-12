@@ -1,0 +1,27 @@
+<robot name="eggplant_3" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <link name="eggplant_3">
+    <visual>
+    <geometry>
+      <mesh filename="$(find icuas23_competition)/models/eggplant_3/eggplant_3.dae" scale="1 1 1" />
+    </geometry>
+    </visual>
+    <inertial>
+      <inertia ixx="10" ixy="0.0" ixz="0.0" iyy="10" iyz="0.0"
+        izz="10" />
+    <mass value="1.0" />
+    </inertial>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find icuas23_competition)/models/eggplant_3/eggplant_3.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo>
+    <static>true</static>
+  </gazebo>
+
+</robot>
