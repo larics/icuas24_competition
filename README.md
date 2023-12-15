@@ -16,6 +16,8 @@ If you're interested in publishing papers based on this repository, please cite 
   journal = {Journal of Intelligent {\&}amp$\mathsemicolon$ Robotic Systems}
 }
 ```
+## How to apply
+Teams interested in the ICUAS'24 UAV Competition are encouraged to check the [rulebook](rulebook/ICUAS24_UAV_Comp_Rulebook_V1.pdf). Instructions on how to apply are in the rulebook. 
 
 ## Install
 
