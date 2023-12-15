@@ -1,4 +1,4 @@
-# ICUAS 2024 UAV Competitio
+# ICUAS 2024 UAV Competition
 The main repository for ICUAS'24 UAV competition
 
 If you're interested in publishing papers based on this repository, please cite the following publication:
@@ -22,8 +22,8 @@ Teams interested in the ICUAS'24 UAV Competition are encouraged to check the [ru
 ## Install
 
 You can either manually install the UAV software stack by following 
-[uav_ros_simulation](https://github.com/larics/uav_ros_simulation) instruction or simply 
-use Docker insted.
+[uav_ros_simulation](https://github.com/larics/uav_ros_simulation) instructions or simply 
+use Docker instead.
 
 To install Docker on your system execute the following command:
 ```
@@ -32,13 +32,13 @@ curl https://raw.githubusercontent.com/larics/uav_ros_simulation/main/installati
 
 ## Troubleshooting
 
-Checkout ```CHANGELOG.md``` for any new changes added to this project.
+Check out ```CHANGELOG.md``` for any new changes added to this project.
 
-Feel free to use [Discussions](https://github.com/larics/icuas23_competition/discussions) tab to exchange ideas and ask questions.
+Feel free to use the [Discussions](https://github.com/larics/icuas23_competition/discussions) tab to exchange ideas and ask questions.
 
 Consider opening an [Issue](https://github.com/larics/icuas23_competition/issues) if you have troubles with the simulation setup.
 
-**NOTE** - If the challenge does not setup correctly it is (probably) not your fault! Components are subject to some changes during the competition so most problems should be solved by updating packages. Try following the troubleshooting recommendation. If the problem persists please post an issue.
+**NOTE** - If the challenge is not set up correctly it is (probably) not your fault! Components are subject to some changes during the competition so most problems should be solved by updating packages. Try following the troubleshooting recommendation. If the problem persists please post an issue.
 
 ### Update this package
 In case there are new changes to the challenge repository:
@@ -112,26 +112,26 @@ Additional arguments:
 * ```--run-args``` - Append additional Docker run arguments, e.g. --rm
 
 **NOTE** Keep in mind this will start a new container so any changes you make inside that container will be lost if you remove the container.
-The idea of the container is to easily integrate your code with the challenge flight stack. To do so, please add your code diretcly to this ROS package since it is copied to the container. Furthermore, feel free to edit ```Dockerfile.focal``` or ```Dockerfile.bionic``` files to 
+The idea of the container is to easily integrate your code with the challenge flight stack. To do so, please add your code directly to this ROS package since it is copied to the container. Furthermore, feel free to edit ```Dockerfile.focal``` or ```Dockerfile.bionic``` files to 
 get all the resources and build your solution.
 
 ## Simulation
 
 | ![simulation.png](.fig/simulation.png) | 
 |:--:| 
-| UAV simulation template startup. Tmux session is running on the left side, with Gazebo client positioned on the right. |
+| UAV simulation template startup. Tmux session is running on the left side, with the Gazebo client positioned on the right. |
 
 ### Controlling the UAV
 
-For your reference, we have set up trajectory planning using TOPP-RA, which you can use by publishing to two topics:
+For your reference, we have set up trajectory planning using TOPP-RA, which you can use by publishing two topics:
 
-* ```tracker/input_pose``` - Send a waypoint (PoseStamped) to TOPP-RA. TOPP-RA then interpolates trajectory between current UAV pose and the target waypoint, and sends trajectory points (MultiDOFJointTrajectoryPoint) to topic ```position_hold/trajectory``` with a given rate. The position controller of the UAV receives the trajectory point as a reference and commands the motors. 
-* ```tracker/input_trajectory``` - Generate a trajectory using the given sampled path in form of waypoints (MultiDOFJointTrajectory). TOPP-RA then interpolates trajectory from the current UAV pose to the first point of the trajectory, and interpolates trajectory between sampled path points. Once trajectory is interpolated, each trajectory point is sent as a reference to the position controller via the ```position_hold/trajectory``` topic
+* ```tracker/input_pose``` - Send a waypoint (PoseStamped) to TOPP-RA. TOPP-RA then interpolates trajectory between the current UAV pose and the target waypoint and sends trajectory points (MultiDOFJointTrajectoryPoint) to topic ```position_hold/trajectory``` with a given rate. The position controller of the UAV receives the trajectory point as a reference and commands the motors. 
+* ```tracker/input_trajectory``` - Generate a trajectory using the given sampled path in the form of waypoints (MultiDOFJointTrajectory). TOPP-RA then interpolates trajectory from the current UAV pose to the first point of the trajectory and interpolates trajectory between sampled path points. Once the trajectory is interpolated, each trajectory point is sent as a reference to the position controller via the ```position_hold/trajectory``` topic
 
 To control the UAV directly, and to publish the trajectory that you generated via your solution, you need to use the following topic:
 * ```position_hold/trajectory``` - Publish a trajectory point directly to the UAV position control
 
-Current position reference (last one sent to the position controller of the UAV) can be obtained via ```carrot/pose``` topic, while current pose of the UAV (in simulation) is available at ```mavros/global_position/local``` topic.
+Current position reference (the last one sent to the position controller of the UAV) can be obtained via ```carrot/pose``` topic, while the current pose of the UAV (in simulation) is available at ```mavros/global_position/local``` topic.
 
 ### Configuration
 
@@ -141,7 +141,7 @@ Configuration files are placed in the ```startup/challenge/custom_config``` fold
 * [TOPP Trajectory Generation](startup/challenge/custom_config/topp_config_custom.yaml)
 
 
-### Plant beds, plants and fruits
+### Plant beds, plants, and fruits
 
 The goal of the UAV is to count the total number of fruits of a given plant. The list of beds that the UAV needs to visit will be provided on the topic ```plant_beds``` within the UAV namespace. The message is a string (```std_msgs/String```) and contains the name of the plant and beds that need to be visited (eg. ```Pepper 1 2 8 12 19```), separated by whitespace. The number of beds may vary in a given mission. 
 
@@ -149,26 +149,26 @@ The goal of the UAV is to count the total number of fruits of a given plant. The
 |:--:| 
 | Plant beds layout. |
 
-Plants are simulated via textures on flat surfaces. The fruits of one variety of plant have the same color and shape, and are simulated as 3D objects partially visible from either one or both sides of the plant. The shapes and colors of fruits on different variety of plants are different. There are three plant varieties: a) Tomato (red), b) Pepper (yellow), c) Eggplant (purple). 
+Plants are simulated via textures on flat surfaces. The fruits of one variety of plants have the same color and shape and are simulated as 3D objects partially visible from either one or both sides of the plant. The shapes and colors of fruits on different variety of plants are different. There are three plant varieties: a) Tomato (red), b) Pepper (yellow), and c) Eggplant (purple). 
 
 ## Challenge
 
-More details on the challenge can be found in the competition rulebook. After the UAV and the world is spawned, plants will also be spawned in beds. One plant bed can contain up to three plants. Each plant may have a different number of fruits (including zero). Some plant beds in the world may be empty, but the ones listed in the mission specification through ```plant_beds``` topic will have at least one plant. 
+More details on the challenge can be found in the competition rulebook. After the UAV and the world is spawned, plants will also be spawned in beds. One plant bed can contain up to three plants. Each plant may have a different number of fruits (including zero). Some plant beds in the world may be empty, but the ones listed in the mission specification through the ```plant_beds``` topic will have at least one plant. 
 
 | ![uav_greenhouse.png](.fig/uav_greenhouse.png) | 
 |:--:| 
 | UAV in the simulation arena for the ICUAS 2024 challenge. |
 
-The setup in this repo reflects how the world for evaluation will be constructed. Teams are welcome to make a permanent world for testing and development, since spawning of a large number of plants in Gazebo takes some time. 
+The setup in this repo reflects how the world for evaluation will be constructed. Teams are welcome to make a permanent world for testing and development since spawning of a large number of plants in Gazebo takes some time. 
 
 
 ### Important node for running your code
-Remember that you should run your code alongside the existing setup through the session file. Use the existing solution section. You can use either existing waits to spawn your nodes or setup your nodes to listen to the following topic:
+Remember that you should run your code alongside the existing setup through the session file. Use the existing solution section. You can use either existing waits to spawn your nodes or set your nodes to listen to the following topic:
 
-* ```challenge_started``` - After ```True``` is published on this topic the UAV is setup correctly.
-* ```plant_beds``` - After the array of points of interest is published on this topic the arena is setup correctly.
+* ```challenge_started``` - After ```True``` is published on this topic the UAV is set up correctly.
+* ```plant_beds``` - After the array of points of interest is published on this topic the arena is set up correctly.
 
 Make sure to wait for data on both topics to safely run your code.
 
 ### Changing the plant locations for testing
-You can change plant locations through session file or spawn them from a separate terminal. Use position args to change the location of the plant. 
+You can change plant locations through the session file or spawn them from a separate terminal. Use position args to change the location of the plant. 
