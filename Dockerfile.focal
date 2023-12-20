@@ -13,7 +13,7 @@ WORKDIR $HOME/$CATKIN_WORKSPACE/src
 RUN git clone --branch melodic_electromagnet_dev https://github.com/larics/storm_gazebo_ros_magnet.git
 
 # Step 3: Create the icuas22_competition package and copy its contents
-WORKDIR $HOME/$CATKIN_WORKSPACE/src/icuas22_competition
+WORKDIR $HOME/$CATKIN_WORKSPACE/src/icuas24_competition
 COPY . .
 
 # Step 4: Build the Catkin workspace
