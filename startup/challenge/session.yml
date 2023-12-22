@@ -82,6 +82,7 @@ windows:
         - |
           waitForRos
           waitForSysStatus
+          waitForSimulation
           rosrun ardupilot_gazebo automatic_takeoff.sh 2 /$UAV_NAMESPACE/odometry
           sleep 5
           rostopic pub --latch /$UAV_NAMESPACE/challenge_started std_msgs/Bool True
