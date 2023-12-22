@@ -78,7 +78,7 @@ windows:
           msf_callback_enable:=true
           odometry:=odometry
           control_type:=pid_cascade_node_yawrate
-          default_params:=custom_config/position_control_thrust.yaml
+          default_params:=custom_config/position_control_custom.yaml
         - |
           waitForRos
           waitForSysStatus
