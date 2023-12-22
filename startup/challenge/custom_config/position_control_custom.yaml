@@ -1,7 +1,7 @@
 control:
 
   rate: 50
-  hover: 0.47
+  hover: 0.5
 
   ff_gain:
     velocity:
@@ -42,14 +42,14 @@ control:
     lim_high: 0.4 
 
   pos_z:
-    kp: 100
-    ki: 0.1
-    kd: 1.25
-    lim_low: -15.0
-    lim_high: 15.0
+    kp: 1.5
+    ki: 0.05
+    kd: 0.0
+    lim_low: -1.5
+    lim_high: 2.5
 
   vel_z:
-    kp: 0.6
+    kp: 0.3
     ki: 0.0
     kd: 0.0
     lim_low: -0.5

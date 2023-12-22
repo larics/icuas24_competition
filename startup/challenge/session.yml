@@ -12,8 +12,12 @@ windows:
           roslaunch ardupilot_gazebo sim_vehicle.launch 
           enable_console:=false
           additional_arguments:="--no-rebuild"
-          parm_file:=$(rospack find icuas24_competition)/parameters/arducopter_nogps.params
-        - waitForRos; rosparam set use_sim_time true; roslaunch ardupilot_gazebo mavros.launch
+        - |
+          waitForRos
+          rosparam set use_sim_time true
+          waitForSimulation
+          roslaunch ardupilot_gazebo generate_mavros_config.launch
+          roslaunch ardupilot_gazebo mavros.launch
   - gazebo:
       layout: tiled
       panes:
@@ -71,7 +75,6 @@ windows:
       layout: tiled
       panes:
         - waitForRos; roslaunch uav_ros_control pid_carrot.launch 
-          manual_takeoff:=false
           msf_callback_enable:=true
           odometry:=odometry
           control_type:=pid_cascade_node_yawrate
