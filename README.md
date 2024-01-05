@@ -153,7 +153,7 @@ Plants are simulated via textures on flat surfaces. The fruits of one variety of
 
 ## Challenge
 
-More details on the challenge can be found in the competition rulebook. After the UAV and the world is spawned, plants will also be spawned in beds. One plant bed can contain up to three plants. Each plant may have a different number of fruits (including zero). Some plant beds in the world may be empty, but the ones listed in the mission specification through the ```plant_beds``` topic will have at least one plant. 
+More details on the challenge can be found in the competition rulebook. After the UAV and the world is spawned, plants will also be spawned in beds. One plant bed can contain up to three plants. Each plant may have a different number of fruits (including zero). Some plant beds in the world may be empty, but the ones listed in the mission specification through the ```plants_beds``` topic will have at least one plant. 
 
 | ![uav_greenhouse.png](.fig/uav_greenhouse.png) | 
 |:--:| 
