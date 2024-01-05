@@ -131,7 +131,7 @@ For your reference, we have set up trajectory planning using TOPP-RA, which you 
 To control the UAV directly, and to publish the trajectory that you generated via your solution, you need to use the following topic:
 * ```position_hold/trajectory``` - Publish a trajectory point directly to the UAV position control
 
-Current position reference (the last one sent to the position controller of the UAV) can be obtained via ```carrot/pose``` topic, while the current pose of the UAV (in simulation) is available at ```mavros/global_position/local``` topic.
+Current position reference (the last one sent to the position controller of the UAV) can be obtained via ```carrot/pose``` topic, while the current pose of the UAV (in simulation) is available at ```odometry``` topic.
 
 ### Configuration
 
