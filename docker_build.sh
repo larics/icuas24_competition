@@ -32,5 +32,6 @@ echo "Building for $distro with additional docker arguments $build_args."
 
 docker build \
     $build_args \
+    --no-cache \
     -f Dockerfile.$distro \
     -t icuas24_competition:$distro .
