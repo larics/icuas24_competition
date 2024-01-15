@@ -14,4 +14,4 @@ ln session.yml .tmuxinator.yml
 
 # start tmuxinator
 #tmuxinator
-tmuxinator start -p session.yml arena=$1
+tmuxinator start -p empty_session.yml arena=$1

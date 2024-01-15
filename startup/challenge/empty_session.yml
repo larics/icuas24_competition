@@ -1,0 +1,53 @@
+name: icuas_ch
+root: ./
+startup_window: roscore
+pre_window: |
+  export UAV_NAMESPACE=red;
+windows:
+  - roscore:
+      layout:
+      panes:
+        - roscore
+        - export SITL_RITW_TERMINAL="tmux new-window -d -n:ardupilot1"; waitForRos; 
+          roslaunch ardupilot_gazebo sim_vehicle.launch 
+          enable_console:=false
+          additional_arguments:="--no-rebuild"
+        - |
+          waitForRos
+          rosparam set use_sim_time true
+          waitForSimulation
+          roslaunch ardupilot_gazebo generate_mavros_config.launch
+          roslaunch ardupilot_gazebo mavros.launch
+  - gazebo:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch ardupilot_gazebo kopterworx.launch 
+          use_sim_time:=true
+          x:=1.5 y:=1.5
+          world:=$(rospack find icuas24_competition)/worlds/well_lit.world
+        - waitForRos; waitForSimulation; roslaunch icuas24_competition spawn_empty.launch
+        - |
+          waitForRos
+          waitForSimulation
+          sleep 2
+          rostopic pub --latch /$UAV_NAMESPACE/plants_beds std_msgs/String "Pepper 10 11 14 21 23 24"
+  - arm&takeof:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch uav_ros_control pid_carrot.launch 
+          msf_callback_enable:=true
+          odometry:=odometry
+          control_type:=pid_cascade_node_yawrate
+          default_params:=custom_config/position_control_custom.yaml
+        - |
+          waitForRos
+          waitForSysStatus
+          waitForSimulation
+          rosrun ardupilot_gazebo automatic_takeoff.sh 2 /$UAV_NAMESPACE/odometry
+          sleep 5
+          rostopic pub --latch /$UAV_NAMESPACE/challenge_started std_msgs/Bool True
+  - trajectory:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch uav_ros_tracker topp_tracker.launch 
+          tracker_config:=custom_config/topp_config_custom.yaml
