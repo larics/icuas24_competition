@@ -11,6 +11,7 @@ CONTAINER_NAME=icuas24_competition
 # Get distro of the built image
 distro=$(docker images $CONTAINER_NAME | tail -n1 | awk '{print $2}')
 run_args=""
+dev=""
 
 for (( i=1; i<=$#; i++));
 do
@@ -31,6 +32,13 @@ do
   if [ "$param" == "--run-args" ]; then
     j=$((i+1))
     run_args="${!j}"
+  fi
+
+  if [ "$param" == "--dev" ]; then
+    echo "Cleaning container:"
+    eval "docker container rm ${CONTAINER_NAME}_${distro}"
+    echo "Mounting volume '$(pwd):/root/uav_ws/src/icuas23_competition'"
+    dev="-v $(pwd):/root/uav_ws/src/icuas23_competition"
   fi
 
 done
@@ -67,5 +75,6 @@ docker run \
   --env DISPLAY=$DISPLAY \
   --env TERM=xterm-256color \
   --name $full_container_name \
+  $dev \
   icuas24_competition:$distro \
   /bin/bash
