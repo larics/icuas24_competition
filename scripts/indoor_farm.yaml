@@ -1,0 +1,13 @@
+row_count: 3
+col_count: 3
+height_count: 3
+plant_bed_width: 6.0
+plant_bed_length: 2.0
+plant_bed_height: 0.8
+row_spacing: 4.0
+col_spacing: 1.5
+height_spacing: 2.0
+x_offset: 3.0
+y_offset: 3.0
+z_offset: 0.0
+safety_distance: 1.5
