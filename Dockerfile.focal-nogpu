@@ -13,15 +13,17 @@ WORKDIR $HOME/$CATKIN_WORKSPACE/src
 RUN git clone --branch melodic_electromagnet_dev https://github.com/larics/storm_gazebo_ros_magnet.git
 
 # Clone CVAR packages
-WORKDIR $HOME/$CATKIN_WORKSPACE/src/cvar
+WORKDIR $HOME/cvar_ws/src
+RUN git clone https://github.com/CVAR-ICUAS-22/icuas_msgs.git -b icuas24
+RUN git clone https://github.com/CVAR-ICUAS-22/icuas2022_speed_controller.git -b icuas24
 RUN git clone https://github.com/CVAR-ICUAS-22/icuas_mission_planner.git -b icuas24
 RUN git clone https://github.com/CVAR-ICUAS-22/icuas_path_planning.git -b icuas24
-RUN git clone https://github.com/CVAR-ICUAS-22/icuas_msgs.git -b main
-RUN git clone https://github.com/CVAR-ICUAS-22/icuas2022_speed_controller.git -b main
+RUN echo "source $HOME/cvar_ws/devel/setup.bash" >> ~/.bashrc
 
 # Step 3: Create the icuas22_competition package and copy its contents
 WORKDIR $HOME/$CATKIN_WORKSPACE/src/icuas24_competition
 COPY . .
 
 # Step 4: Build the Catkin workspace
-RUN catkin build --limit-status-rate 0.2
+RUN cd $HOME/$CATKIN_WORKSPACE && catkin build --limit-status-rate 0.2
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && source $HOME/$CATKIN_WORKSPACE/devel/setup.bash && cd $HOME/cvar_ws && catkin build --limit-status-rate 0.2"
