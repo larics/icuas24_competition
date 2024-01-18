@@ -38,7 +38,8 @@ do
     echo "Cleaning container:"
     eval "docker container rm ${CONTAINER_NAME}_${distro}"
     echo "Mounting volume '$(pwd):/root/sim_ws/src/icuas24_competition'"
-    dev="-v $(pwd):/root/sim_ws/src/icuas24_competition"
+    dev="-v $(pwd):/root/sim_ws/src/icuas24_competition \
+         -v $(pwd)/cvar/cvar_ws/:/root/cvar_ws/"
   fi
 
 done

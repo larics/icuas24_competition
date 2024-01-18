@@ -23,7 +23,7 @@ WORKDIR $HOME/$CATKIN_WORKSPACE/
 RUN catkin build --limit-status-rate 0.2
 
 WORKDIR $HOME/cvar_ws/src/
-COPY ./cvar_ws/src/ .
+COPY ./cvar/cvar_ws/src/ .
 WORKDIR $HOME/cvar_ws/
 
 # Step 5: Build the CVAR Catkin workspace
