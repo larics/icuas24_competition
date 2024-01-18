@@ -1,0 +1,21 @@
+repositories:
+
+  src/icuas_mission_planner:
+    type: git 
+    url: git@github.com:CVAR-ICUAS-22/icuas_mission_planner.git
+    version: icuas24
+
+  src/icuas_path_planning:
+    type: git 
+    url: git@github.com:CVAR-ICUAS-22/icuas_path_planning.git
+    version: icuas24
+
+  src/icuas_msgs:
+    type: git 
+    url: git@github.com:CVAR-ICUAS-22/icuas_msgs.git
+    version: icuas24
+
+  src/icuas2022_speed_controller:
+    type: git 
+    url: git@github.com:CVAR-ICUAS-22/icuas2022_speed_controller.git
+    version: icuas24
