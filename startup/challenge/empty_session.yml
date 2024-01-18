@@ -30,7 +30,7 @@ windows:
           waitForRos
           waitForSimulation
           sleep 2
-          rostopic pub --latch /$UAV_NAMESPACE/plants_beds std_msgs/String "Pepper 10 11 14 21 23 24"
+          rostopic pub --latch /$UAV_NAMESPACE/plants_beds std_msgs/String "Pepper 1 2 3"
   - arm&takeof:
       layout: tiled
       panes:
@@ -51,3 +51,18 @@ windows:
       panes:
         - waitForRos; roslaunch uav_ros_tracker topp_tracker.launch 
           tracker_config:=custom_config/topp_config_custom.yaml
+  - solution:
+      layout: 
+      panes:
+        - waitForRos; roslaunch icuas_mission_planner icuas_mission_planner.launch
+          namespace:=$UAV_NAMESPACE
+        - waitForRos; roslaunch icuas_path_planner icuas_path_planner.launch
+          namespace:=$UAV_NAMESPACE
+        - waitForRos; roslaunch basic_speed_controller basic_speed_controller.launch
+          namespace:=$UAV_NAMESPACE
+          path_facing:=false
+          new_pid:=true
+  - debug:
+      layout: tiled
+      panes:
+        - 
