@@ -21,8 +21,8 @@ Teams interested in the ICUAS'24 UAV Competition are encouraged to check the [ru
 
 ## Install
 
-You can either manually install the UAV software stack by following 
-[uav_ros_simulation](https://github.com/larics/uav_ros_simulation) instructions or simply 
+~~You can either manually install the UAV software stack by following 
+[uav_ros_simulation](https://github.com/larics/uav_ros_simulation) instructions~~ or simply 
 use Docker instead.
 
 To install Docker on your system execute the following command:
@@ -58,8 +58,8 @@ In case the simulation inside the Docker container is (still) not working correc
 ./docker_build.sh --build-args "--no-cache --pull" --[[DISTRO]]
 ```
 
-### Updating native installation
-If you're building all the packages natively, navigate to the ```uav_ros_simulation``` folder and do the following:
+### ~~Updating native installation~~
+~~If you're building all the packages natively, navigate to the ```uav_ros_simulation``` folder and do the following:~~
 ```bash
 git pull origin main
 ./installation/install.sh
@@ -72,11 +72,11 @@ Update all code of the competition repo and build as follows:
 ```bash
 git pull origin main
 catkin build
-```
+``` 
 
 ## Build
 
-You can either manually build all the packages on your system using the ```catkin build``` command.
+~~You can either manually build all the packages on your system using the~~ ```catkin build``` command.
 
 Alternatively, to build the ICUAS2024 Competition solution image please execute the following command:
 ```
