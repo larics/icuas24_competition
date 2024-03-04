@@ -1,0 +1,65 @@
+          roslaunch icuas24_competition spawn_plant.launch name:=plant1 model_name:=tomato_4 x:=4.0 y:=7.5 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant2 model_name:=tomato_7 x:=4.0 y:=6.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant3 model_name:=tomato_4 x:=4.0 y:=12.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant4 model_name:=eggplant_5 x:=4.0 y:=15.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant5 model_name:=pepper_6 x:=10.0 y:=12.0 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant6 model_name:=eggplant_5 x:=10.0 y:=13.5 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant7 model_name:=plant x:=10.0 y:=15.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant8 model_name:=tomato_3 x:=10.0 y:=19.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant9 model_name:=tomato_4 x:=10.0 y:=21.0 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant10 model_name:=pepper_6 x:=10.0 y:=22.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant11 model_name:=tomato_5 x:=10.0 y:=22.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant12 model_name:=eggplant_5 x:=10.0 y:=19.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant13 model_name:=eggplant_5 x:=16.0 y:=4.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant14 model_name:=tomato_4 x:=16.0 y:=7.5 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant15 model_name:=pepper_6 x:=16.0 y:=6.0 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant16 model_name:=tomato_7 x:=16.0 y:=12.0 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant17 model_name:=tomato_6 x:=16.0 y:=15.0 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant18 model_name:=eggplant_5 x:=16.0 y:=13.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant19 model_name:=tomato_6 x:=16.0 y:=22.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant20 model_name:=tomato_4 x:=16.0 y:=21.0 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant21 model_name:=pepper_6 x:=4.0 y:=4.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant22 model_name:=tomato_5 x:=4.0 y:=7.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant23 model_name:=pepper_5 x:=4.0 y:=6.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant24 model_name:=pepper_7 x:=4.0 y:=13.5 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant25 model_name:=pepper_4 x:=4.0 y:=12.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant26 model_name:=plant x:=4.0 y:=22.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant27 model_name:=pepper_7 x:=4.0 y:=19.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant28 model_name:=pepper_4 x:=10.0 y:=7.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant29 model_name:=plant x:=10.0 y:=4.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant30 model_name:=eggplant_7 x:=10.0 y:=6.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant31 model_name:=pepper_5 x:=10.0 y:=4.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant32 model_name:=pepper_7 x:=10.0 y:=12.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant33 model_name:=tomato_5 x:=10.0 y:=15.0 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant34 model_name:=tomato_5 x:=10.0 y:=22.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant35 model_name:=eggplant_7 x:=10.0 y:=21.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant36 model_name:=eggplant_7 x:=16.0 y:=22.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant37 model_name:=plant x:=16.0 y:=19.5 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant38 model_name:=eggplant_7 x:=16.0 y:=21.0 z:=6.699999999999999 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant39 model_name:=eggplant_5 x:=4.0 y:=4.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant40 model_name:=eggplant_7 x:=4.0 y:=6.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant41 model_name:=pepper_6 x:=4.0 y:=7.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant42 model_name:=eggplant_5 x:=4.0 y:=12.0 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant43 model_name:=eggplant_6 x:=4.0 y:=19.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant44 model_name:=eggplant_5 x:=4.0 y:=21.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant45 model_name:=pepper_6 x:=4.0 y:=22.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant46 model_name:=eggplant_6 x:=4.0 y:=19.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant47 model_name:=eggplant_6 x:=10.0 y:=7.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant48 model_name:=eggplant_7 x:=10.0 y:=6.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant49 model_name:=eggplant_5 x:=10.0 y:=4.5 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant50 model_name:=pepper_6 x:=16.0 y:=7.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant51 model_name:=eggplant_7 x:=16.0 y:=6.0 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant52 model_name:=eggplant_4 x:=16.0 y:=4.5 z:=6.699999999999999 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant53 model_name:=plant x:=16.0 y:=12.0 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant54 model_name:=tomato_5 x:=16.0 y:=13.5 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant55 model_name:=eggplant_4 x:=16.0 y:=15.0 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant56 model_name:=eggplant_3 x:=16.0 y:=13.5 z:=3.9 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant57 model_name:=tomato_5 x:=16.0 y:=12.0 z:=3.9 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant58 model_name:=tomato_5 x:=16.0 y:=19.5 z:=1.1 yaw:=-1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant59 model_name:=eggplant_3 x:=16.0 y:=21.0 z:=1.1 yaw:=1.5707
+          roslaunch icuas24_competition spawn_plant.launch name:=plant60 model_name:=plant x:=16.0 y:=22.5 z:=1.1 yaw:=1.5707
+          rostopic pub --latch /$UAV_NAMESPACE/plants_beds std_msgs/String "Tomato 2 6 14 16 18 20 24 26"
+True values spawned
+Tomato [7, 5, 0, 8, 4, 5, 5, 8], total count 42
+Pepper [5, 8, 4, 4, 3, 4, 0, 0], total count 28
+Eggplant [4, 3, 5, 2, 6, 4, 3, 3, 3], total count 33
